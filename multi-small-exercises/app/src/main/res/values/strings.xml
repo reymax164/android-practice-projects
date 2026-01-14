@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MSE App</string>
+
+    <string name="main_title">Multi Small Projects</string>
+
+    <string name="project1_title">User Input Exercise</string>
+    <string name="enter_btn">Enter</string>
+    <string name="last_name_hint">Last Name</string>
+    <string name="first_name_hint">First Name</string>
+    <string name="age_hint">Age</string>
+    <string name="gender_hint">Gender</string>
+
+    <string name="project2_title">Tip Calculator</string>
+</resources>
