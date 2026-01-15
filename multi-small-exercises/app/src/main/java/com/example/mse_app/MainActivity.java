@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void goToTipCalculator(View v) {
-        Intent intent = new Intent(this, TipCalculator.class);
+    public void goToPayroll(View v) {
+        Intent intent = new Intent(this, PayrollActivity.class);
         startActivity(intent);
     }
 }

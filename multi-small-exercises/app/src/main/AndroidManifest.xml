@@ -26,14 +26,14 @@
             android:name=".UserInputActivity"
             android:exported="false"
             android:label="User Input Exercise"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity" />
 
         <activity
-            android:name=".TipCalculator"
+            android:name=".PayrollActivity"
             android:exported="false"
-            android:label="Tip Calculator"
-            android:parentActivityName=".MainActivity"/>
-
+            android:parentActivityName=".MainActivity"
+            android:label="Payroll Calculator"/>
     </application>
+
 
 </manifest>

@@ -7,4 +7,5 @@
     <color name="steelBlue">#547792</color>
     <color name="airForceBlue">#94B4C1</color>
     <color name="parchment">#EAE0CF</color>
+    <color name="parchment_hint">#BDB2A0</color>
 </resources>

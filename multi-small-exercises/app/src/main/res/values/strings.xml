@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MSE App</string>
 
-    <string name="main_title">Multi Small Projects</string>
+    <string name="main_title">Multi Small Exercises</string>
 
     <string name="project1_title">User Input Exercise</string>
     <string name="enter_btn">Enter</string>
@@ -10,5 +10,7 @@
     <string name="age_hint">Age</string>
     <string name="gender_hint">Gender</string>
 
-    <string name="project2_title">Tip Calculator</string>
+    <string name="project2_title">Payroll Calculator</string>
+    <string name="full_time_title">Full Time</string>
+    <string name="part_time_title">Part Time</string>
 </resources>

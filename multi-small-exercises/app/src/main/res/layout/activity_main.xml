@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/steelBlue"
-        android:onClick="goToTipCalculator"
+        android:onClick="goToPayroll"
         android:text="Go"
         android:textColor="@color/parchment"
         app:layout_constraintStart_toStartOf="@+id/projectTitle2"
