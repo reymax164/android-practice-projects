@@ -49,7 +49,7 @@
             android:autofillHints="age"
             android:ems="16"
             android:hint="@string/age_hint"
-            android:inputType="text"
+            android:inputType="number"
             android:textColor="@color/parchment"
             android:textColorHint="@color/parchment_hint"
             android:backgroundTint="@color/parchment"

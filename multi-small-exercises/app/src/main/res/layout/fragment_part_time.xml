@@ -3,13 +3,97 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".PartTimeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Part Time"
-        android:textSize="64sp"/>
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/employeeName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Employee Name: "
+            android:textColor="@color/parchment"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/employeeWage"
+            app:layout_constraintStart_toStartOf="@+id/employeeWage" />
+
+        <TextView
+            android:id="@+id/employeeWage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="2dp"
+            android:text="Wage:"
+            android:textColor="@color/parchment"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toTopOf="@+id/pt_nameInput"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <EditText
+            android:id="@+id/pt_nameInput"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:hint="Full Name"
+            android:textColor="@color/parchment"
+            android:textColorHint="@color/parchment_hint"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/RpHEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="4dp"
+            android:ems="10"
+            android:hint="Rate per Hour"
+            android:inputType="numberDecimal"
+            android:textColor="@color/parchment"
+            android:textColorHint="@color/parchment_hint"
+            app:layout_constraintEnd_toStartOf="@+id/HrsWEditText"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/pt_nameInput" />
+
+        <EditText
+            android:id="@+id/HrsWEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="8dp"
+            android:ems="10"
+            android:hint="Hours Worked"
+            android:inputType="number"
+            android:textColor="@color/parchment"
+            android:textColorHint="@color/parchment_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/RpHEditText"
+            app:layout_constraintTop_toBottomOf="@+id/pt_nameInput" />
+
+        <Button
+            android:id="@+id/getTotalWageBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:backgroundTint="@color/steelBlue"
+            android:text="Get Total"
+            android:textColor="@color/parchment"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/HrsWEditText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

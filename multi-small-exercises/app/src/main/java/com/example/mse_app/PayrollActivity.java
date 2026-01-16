@@ -13,8 +13,10 @@ import androidx.fragment.app.FragmentManager;
 
 public class PayrollActivity extends AppCompatActivity {
 
-    Button fullTimeBtn, partTimeBtn;
-    TextView payrollTile;
+    Button switchBtn;
+    TextView payrollTitle;
+    String fullTimeStr, partTimeStr;
+    boolean inPartTime = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,29 +29,37 @@ public class PayrollActivity extends AppCompatActivity {
             return insets;
         });
 
-        // full time
-        payrollTile = findViewById(R.id.payrollTitle);
-        fullTimeBtn = findViewById(R.id.fullTimeBtn);
-        partTimeBtn = findViewById(R.id.partTimeBtn);
+        fullTimeStr =  "Switch to Full Time";
+        partTimeStr = "Switch to Part Time";
 
-        fullTimeBtn.setOnClickListener(view -> {
-            payrollTile.setText(R.string.full_time_title);
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.payrollFragmentContainer, FullTimeFragment.class, null)
-                    .setReorderingAllowed(true)
-                    .commit();
+        payrollTitle = findViewById(R.id.payrollTitle);
+        switchBtn = findViewById(R.id.switchBtn);
+
+        switchBtn.setOnClickListener(v -> {
+            if (!inPartTime) {
+                payrollTitle.setText(R.string.part_time_title);
+                switchBtn.setText(partTimeStr);
+
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.payrollFragmentContainer, PartTimeFragment.class, null)
+                        .setReorderingAllowed(true)
+                        .commit();
+
+                inPartTime = true;
+            }
+            else {
+                payrollTitle.setText(R.string.full_time_title);
+                switchBtn.setText(fullTimeStr);
+
+                getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.payrollFragmentContainer, FullTimeFragment.class, null)
+                        .setReorderingAllowed(true)
+                        .commit();
+
+                inPartTime = false;
+            }
         });
 
-        // part time
-        partTimeBtn.setOnClickListener(view -> {
-            payrollTile.setText(R.string.part_time_title);
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            fragmentManager.beginTransaction()
-                    .replace(R.id.payrollFragmentContainer, PartTimeFragment.class, null)
-                    .setReorderingAllowed(true)
-                    .commit();
-        });
 
     }
 }

@@ -61,7 +61,7 @@ public class FullTimeFragment extends Fragment {
                 totalOverTimePay = otHoursInt * otPayDouble;
                 salary = baseSalary + totalOverTimePay;
 
-                String total = "Salary: ₱" + salary;
+                String total = String.format("Salary: ₱ %.2f", salary);
                 salaryTextView.setText(total);
 
             } catch (Exception e) {
