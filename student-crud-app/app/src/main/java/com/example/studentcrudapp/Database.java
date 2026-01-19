@@ -2,10 +2,14 @@ package com.example.studentcrudapp;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Database extends SQLiteOpenHelper {
 
@@ -24,7 +28,7 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTableStatement = "CREATE TABLE " + studentsTable + " (" + idColumn + " INTEGER PRIMARY KEY AUTOINCREMENT, " + lastNameColumn + " TEXT, " + firstNameColumn + " TEXT, " + middleNameColumn + " TEXT, " + ageColumn + " INT, " + isRegularColumn + " BOOL)";
+        String createTableStatement = "CREATE TABLE " + studentsTable + " (" + idColumn + " INTEGER PRIMARY KEY, " + lastNameColumn + " TEXT, " + firstNameColumn + " TEXT, " + middleNameColumn + " TEXT, " + ageColumn + " INT, " + isRegularColumn + " BOOL)";
 
         db.execSQL(createTableStatement);
     }
@@ -38,6 +42,7 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
+        cv.put(idColumn, student.getId());
         cv.put(lastNameColumn, student.getLastName());
         cv.put(firstNameColumn, student.getFirstName());
         cv.put(middleNameColumn, student.getMiddleName());
@@ -46,5 +51,33 @@ public class Database extends SQLiteOpenHelper {
 
         long insert = db.insert(studentsTable, null, cv);
         return insert != -1;
+    }
+
+    public List<Student> getStudents() {
+        List<Student> studentList = new ArrayList<>();
+
+        String selectStatement = "SELECT * FROM " + studentsTable;
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectStatement, null);
+
+        if(cursor.moveToFirst()) {
+            do {
+                int studentID = cursor.getInt(0);
+                String lastName = cursor.getString(1);
+                String firstName = cursor.getString(2);
+                String middleName = cursor.getString(3);
+                int age = cursor.getInt(4);
+                boolean isRegular = cursor.getInt(5) == 1;
+
+                Student student = new Student(studentID, lastName, firstName, middleName, age, isRegular);
+                studentList.add(student);
+
+            } while (cursor.moveToNext());
+        }
+
+        cursor.close();
+        db.close();
+
+        return studentList;
     }
 }
