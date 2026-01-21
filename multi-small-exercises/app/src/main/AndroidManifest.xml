@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MSEApp">
-
+        <activity
+            android:name=".SharedPreferencesActivity"
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -21,19 +23,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".UserInputActivity"
             android:exported="false"
             android:label="User Input Exercise"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".PayrollActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"
-            android:label="Payroll Calculator"/>
+            android:label="Payroll Calculator"
+            android:parentActivityName=".MainActivity" />
     </application>
-
 
 </manifest>

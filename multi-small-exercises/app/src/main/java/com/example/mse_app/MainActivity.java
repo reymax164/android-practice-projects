@@ -33,4 +33,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, PayrollActivity.class);
         startActivity(intent);
     }
+
+    public void goToSharedPreferences(View v) {
+        Intent intent = new Intent(this, SharedPreferencesActivity.class);
+        startActivity(intent);
+    }
 }

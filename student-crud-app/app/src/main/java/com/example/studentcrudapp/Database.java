@@ -15,7 +15,7 @@ public class Database extends SQLiteOpenHelper {
 
 
     private static final String studentsTable = "Student";
-    private static final String idColumn = "id";
+    private static final String studentNoColumn = "studentNo";
     private static final String lastNameColumn = "lastName";
     private static final String firstNameColumn = "firstName";
     private static final String middleNameColumn = "middleName";
@@ -28,7 +28,7 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String createTableStatement = "CREATE TABLE " + studentsTable + " (" + idColumn + " INTEGER PRIMARY KEY, " + lastNameColumn + " TEXT, " + firstNameColumn + " TEXT, " + middleNameColumn + " TEXT, " + ageColumn + " INT, " + isRegularColumn + " BOOL)";
+        String createTableStatement = "CREATE TABLE " + studentsTable + " (" + studentNoColumn + " INTEGER PRIMARY KEY, " + lastNameColumn + " TEXT, " + firstNameColumn + " TEXT, " + middleNameColumn + " TEXT, " + ageColumn + " INT, " + isRegularColumn + " BOOL)";
 
         db.execSQL(createTableStatement);
     }
@@ -42,7 +42,7 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
-        cv.put(idColumn, student.getId());
+        cv.put(studentNoColumn, student.getId());
         cv.put(lastNameColumn, student.getLastName());
         cv.put(firstNameColumn, student.getFirstName());
         cv.put(middleNameColumn, student.getMiddleName());
@@ -51,6 +51,47 @@ public class Database extends SQLiteOpenHelper {
 
         long insert = db.insert(studentsTable, null, cv);
         return insert != -1;
+    }
+
+    public void deleteStudent(int studentId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String deleteStatement = "DELETE FROM " + studentsTable + " WHERE " + studentId + "=" + studentNoColumn;
+        db.execSQL(deleteStatement);
+        db.close();
+    }
+
+    public boolean updateStudentPartial(int studentNo, String lastName, String firstName, String middleName, String ageStr, boolean isRegular) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+
+        if (lastName != null && !lastName.trim().isEmpty()) {
+            values.put(lastNameColumn, lastName);
+        }
+
+        if (firstName != null && !firstName.trim().isEmpty()) {
+            values.put(firstNameColumn, firstName);
+        }
+
+        if (middleName != null && !middleName.trim().isEmpty()) {
+            values.put(middleNameColumn, middleName);
+        }
+
+        if (ageStr != null && !ageStr.trim().isEmpty()) {
+            values.put(ageColumn, Integer.parseInt(ageStr));
+        }
+
+        int regularity = isRegular ? 1 : 0;
+        values.put(isRegularColumn, regularity);
+
+        if (values.size() == 0) {
+            db.close();
+            return false;
+        }
+
+        int rowsAffected = db.update(studentsTable, values, studentNoColumn + "=?", new String[]{String.valueOf(studentNo)});
+        db.close();
+
+        return rowsAffected > 0;
     }
 
     public List<Student> getStudents() {

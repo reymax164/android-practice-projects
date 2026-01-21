@@ -13,4 +13,10 @@
     <string name="project2_title">Payroll Calculator</string>
     <string name="full_time_title">Full Time</string>
     <string name="part_time_title">Part Time</string>
+    <string name="go">Go</string>
+    <string name="shared_preferences">Shared Preferences</string>
+    <string name="save">Save</string>
+    <string name="refresh">Refresh</string>
+    <string name="input">Input</string>
+    <string name="shared_preferences_text">text</string>
 </resources>

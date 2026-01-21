@@ -65,36 +65,66 @@ public class MainActivity extends AppCompatActivity {
                         Integer.parseInt(et_age.getText().toString()),
                         regularSwitch.isChecked());
 
-                // System.out.println(student.toString());
-            } catch (Exception e) {
-                Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
-                // student = new Student(-1, "error", "error", "error", 0, false);
+            } catch (NumberFormatException e) {
+                Toast.makeText(this, "Incomplete Input", Toast.LENGTH_SHORT).show();
                 return;
             }
 
             boolean success = db.register(student);
             if (success) Toast.makeText(this, "Registration Successful", Toast.LENGTH_SHORT).show();
 
+            emptyEditTexts();
             getStudentList();
         });
 
 
         btn_refresh.setOnClickListener(v -> {
-            Toast.makeText(this, "Retrieving Students", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Refreshed", Toast.LENGTH_SHORT).show();
             getStudentList();
         });
 
         btn_update.setOnClickListener(v -> {
-            Toast.makeText(this, "Update", Toast.LENGTH_SHORT).show();
+            try {
+                db.updateStudentPartial(
+                        Integer.parseInt(et_studentNumber.getText().toString()),
+                        et_lastName.getText().toString(),
+                        et_firstName.getText().toString(),
+                        et_middleName.getText().toString(),
+                        et_age.getText().toString(),
+                        regularSwitch.isChecked()
+                );
+                Toast.makeText(this, "Update Successful", Toast.LENGTH_SHORT).show();
+            } catch (NumberFormatException e) {
+                Toast.makeText(this, "Enter a student number", Toast.LENGTH_SHORT).show();
+            } finally {
+                getStudentList();
+            }
         });
 
         btn_delete.setOnClickListener(v -> {
-            Toast.makeText(this, "Delete", Toast.LENGTH_SHORT).show();
+            try {
+                db.deleteStudent(Integer.parseInt(et_studentNumber.getText().toString()));
+                Toast.makeText(this, "Student deleted", Toast.LENGTH_SHORT).show();
+            } catch (NumberFormatException e) {
+                Toast.makeText(this, "Please enter a student number", Toast.LENGTH_SHORT).show();
+            } finally {
+                emptyEditTexts();
+                getStudentList();
+            }
         });
     }
 
     private void getStudentList() {
         adapter = new StudentAdapter(MainActivity.this, db.getStudents());
         lv_studentList.setAdapter(adapter);
+    }
+
+    public void emptyEditTexts() {
+        et_studentNumber.setText("");
+        et_lastName.setText("");
+        et_firstName.setText("");
+        et_middleName.setText("");
+        et_age.setText("");
+        regularSwitch.setChecked(false);
     }
 }
