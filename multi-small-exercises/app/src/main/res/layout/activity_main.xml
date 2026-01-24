@@ -92,4 +92,27 @@
         app:layout_constraintStart_toStartOf="@+id/projectTitle2"
         app:layout_constraintTop_toBottomOf="@+id/projectTitle3" />
 
+    <TextView
+        android:id="@+id/projectTitle4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/simple_music_player"
+        android:textColor="@color/parchment"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/projectTitle1"
+        app:layout_constraintTop_toBottomOf="@+id/projectBtn3" />
+
+    <Button
+        android:id="@+id/projectBtn4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/steelBlue"
+        android:onClick="goToMusicPlayer"
+        android:text="@string/go"
+        android:textColor="@color/parchment"
+        app:layout_constraintStart_toStartOf="@+id/projectTitle3"
+        app:layout_constraintTop_toBottomOf="@+id/projectTitle4" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

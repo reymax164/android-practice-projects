@@ -38,4 +38,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SharedPreferencesActivity.class);
         startActivity(intent);
     }
+
+    public void goToMusicPlayer(View v) {
+        Intent intent = new Intent(this, SimpleMusicPlayer.class);
+        startActivity(intent);
+    }
 }
