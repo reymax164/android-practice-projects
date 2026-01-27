@@ -12,14 +12,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MSEApp">
         <activity
+            android:name=".DataReceivingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DataPassingActivity"
+            android:exported="false" />
+        <activity
             android:name=".SimpleMusicPlayer"
             android:exported="false" />
-        <service android:name=".MusicService"/>
+
+        <service android:name=".MusicService" />
 
         <activity
             android:name=".SharedPreferencesActivity"
             android:exported="false" />
-
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -29,13 +35,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".UserInputActivity"
             android:exported="false"
             android:label="User Input Exercise"
             android:parentActivityName=".MainActivity" />
-
         <activity
             android:name=".PayrollActivity"
             android:exported="false"

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DataPassingActivity"
+    android:background="@color/prussianBlue">
+
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etAge"
+        android:layout_centerHorizontal="true"
+        android:hint="Name"
+        android:textColorHint="@color/parchment_hint"
+        android:backgroundTint="@color/parchment"
+        android:ems="15"/>
+
+    <EditText
+        android:id="@+id/etAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:hint="Age"
+        android:inputType="number"
+        android:textColorHint="@color/parchment_hint"
+        android:backgroundTint="@color/parchment"
+        android:ems="15"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/btnSubmitData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pass Data"
+        android:textColor="@color/parchment"
+        android:backgroundTint="@color/steelBlue"
+        android:layout_below="@+id/etAge"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"/>
+
+</RelativeLayout>

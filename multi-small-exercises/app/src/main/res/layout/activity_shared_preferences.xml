@@ -23,8 +23,10 @@
 
     <TextView
         android:id="@+id/txt_center"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
         android:textColor="@color/parchment"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/et_input"
@@ -39,7 +41,8 @@
         android:backgroundTint="@color/parchment"
         android:ems="10"
         android:hint="@string/input"
-        android:inputType="text"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
         android:textColor="@color/parchment"
         android:textColorHint="@color/parchment_hint"
         app:layout_constraintBottom_toBottomOf="parent"

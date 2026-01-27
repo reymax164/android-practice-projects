@@ -43,4 +43,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, SimpleMusicPlayer.class);
         startActivity(intent);
     }
+
+    public void goToDataPassing(View v) {
+        Intent intent = new Intent(this, DataPassingActivity.class);
+        startActivity(intent);
+    }
 }

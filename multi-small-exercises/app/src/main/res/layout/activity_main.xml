@@ -16,7 +16,7 @@
         android:layout_marginTop="32dp"
         android:text="@string/main_title"
         android:textColor="@color/parchment"
-        android:textSize="32dp"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -115,4 +115,26 @@
         app:layout_constraintStart_toStartOf="@+id/projectTitle3"
         app:layout_constraintTop_toBottomOf="@+id/projectTitle4" />
 
+    <TextView
+        android:id="@+id/projectTitle5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/data_passing_in_activities"
+        android:textColor="@color/parchment"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/projectTitle1"
+        app:layout_constraintTop_toBottomOf="@+id/projectBtn4" />
+
+    <Button
+        android:id="@+id/projectBtn5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/steelBlue"
+        android:onClick="goToDataPassing"
+        android:text="@string/go"
+        android:textColor="@color/parchment"
+        app:layout_constraintStart_toStartOf="@+id/projectTitle4"
+        app:layout_constraintTop_toBottomOf="@+id/projectTitle5" />
 </androidx.constraintlayout.widget.ConstraintLayout>
