@@ -37,7 +37,22 @@ public class MusicService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        mediaPlayer.start();
+        String action = intent.getAction();
+
+        if (mediaPlayer != null) {
+            if ("ACTION_PAUSE".equals(action)) {
+                if (mediaPlayer.isPlaying()) {
+                    mediaPlayer.pause();
+                    Toast.makeText(this, "Music Paused", Toast.LENGTH_SHORT).show();
+                }
+            }
+            else {
+                if (!mediaPlayer.isPlaying()) {
+                    mediaPlayer.start();
+                    Toast.makeText(this, "Music Playing", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
         return START_STICKY;
     }
 

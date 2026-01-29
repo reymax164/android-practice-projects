@@ -22,119 +22,74 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/projectTitle1"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/projectBtn1"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="@color/steelBlue"
+        android:onClick="goToUserInput"
         android:text="@string/project1_title"
         android:textColor="@color/parchment"
-        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/projectBtn3"
+        app:layout_constraintEnd_toStartOf="@+id/projectBtn2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mainTitle" />
 
     <Button
-        android:id="@+id/project1Btn1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/go"
-        app:layout_constraintStart_toStartOf="@+id/projectTitle1"
-        app:layout_constraintTop_toBottomOf="@+id/projectTitle1"
-        android:onClick="goToUserInput"
-        android:textColor="@color/parchment"
-        android:backgroundTint="@color/steelBlue"/>
-
-    <TextView
-        android:id="@+id/projectTitle2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/project2_title"
-        android:textColor="@color/parchment"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/projectTitle1"
-        app:layout_constraintTop_toBottomOf="@+id/project1Btn1" />
-
-    <Button
         android:id="@+id/projectBtn2"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
         android:backgroundTint="@color/steelBlue"
         android:onClick="goToPayroll"
-        android:text="@string/go"
+        android:text="@string/project2_title"
         android:textColor="@color/parchment"
-        app:layout_constraintStart_toStartOf="@+id/projectTitle2"
-        app:layout_constraintTop_toBottomOf="@+id/projectTitle2" />
-
-    <TextView
-        android:id="@+id/projectTitle3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/shared_preferences"
-        android:textColor="@color/parchment"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/projectTitle1"
-        app:layout_constraintTop_toBottomOf="@+id/projectBtn2" />
+        app:layout_constraintBottom_toBottomOf="@+id/projectBtn1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/projectBtn1"
+        app:layout_constraintTop_toBottomOf="@+id/mainTitle" />
 
     <Button
         android:id="@+id/projectBtn3"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/steelBlue"
         android:onClick="goToSharedPreferences"
-        android:text="@string/go"
+        android:text="@string/shared_preferences"
         android:textColor="@color/parchment"
-        app:layout_constraintStart_toStartOf="@+id/projectTitle2"
-        app:layout_constraintTop_toBottomOf="@+id/projectTitle3" />
-
-    <TextView
-        android:id="@+id/projectTitle4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/simple_music_player"
-        android:textColor="@color/parchment"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/projectTitle1"
-        app:layout_constraintTop_toBottomOf="@+id/projectBtn3" />
+        app:layout_constraintEnd_toEndOf="@+id/projectBtn1"
+        app:layout_constraintStart_toStartOf="@+id/projectBtn1"
+        app:layout_constraintTop_toBottomOf="@+id/projectBtn1" />
 
     <Button
         android:id="@+id/projectBtn4"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/steelBlue"
         android:onClick="goToMusicPlayer"
-        android:text="@string/go"
+        android:text="@string/simple_music_player"
         android:textColor="@color/parchment"
-        app:layout_constraintStart_toStartOf="@+id/projectTitle3"
-        app:layout_constraintTop_toBottomOf="@+id/projectTitle4" />
-
-    <TextView
-        android:id="@+id/projectTitle5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/data_passing_in_activities"
-        android:textColor="@color/parchment"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/projectTitle1"
-        app:layout_constraintTop_toBottomOf="@+id/projectBtn4" />
+        app:layout_constraintEnd_toEndOf="@+id/projectBtn2"
+        app:layout_constraintStart_toStartOf="@+id/projectBtn2"
+        app:layout_constraintTop_toBottomOf="@+id/projectBtn2" />
 
     <Button
         android:id="@+id/projectBtn5"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:backgroundTint="@color/steelBlue"
         android:onClick="goToDataPassing"
-        android:text="@string/go"
+        android:text="@string/data_passing_in_activities"
         android:textColor="@color/parchment"
-        app:layout_constraintStart_toStartOf="@+id/projectTitle4"
-        app:layout_constraintTop_toBottomOf="@+id/projectTitle5" />
+        app:layout_constraintEnd_toEndOf="@+id/projectBtn3"
+        app:layout_constraintStart_toStartOf="@+id/projectBtn3"
+        app:layout_constraintTop_toBottomOf="@+id/projectBtn3" />
 </androidx.constraintlayout.widget.ConstraintLayout>

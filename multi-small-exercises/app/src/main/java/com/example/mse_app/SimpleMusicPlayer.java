@@ -3,7 +3,6 @@ package com.example.mse_app;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,7 +29,10 @@ public class SimpleMusicPlayer extends AppCompatActivity {
         stop = findViewById(R.id.stopMusic);
 
         play.setOnClickListener(v -> {
-            startService(new Intent(this, MusicService.class));
+            Intent playIntent = new Intent(this, MusicService.class);
+            playIntent.setAction("ACTION_PLAY");
+
+            startService(playIntent);
         });
 
         stop.setOnClickListener(v -> {
@@ -38,8 +40,10 @@ public class SimpleMusicPlayer extends AppCompatActivity {
         });
 
         pause.setOnClickListener(v -> {
-            // TODO: Pause button
-            Toast.makeText(this, "Music Paused", Toast.LENGTH_SHORT).show();
+            Intent pauseIntent = new Intent(this, MusicService.class);
+            pauseIntent.setAction("ACTION_PAUSE");
+
+            startService(pauseIntent);
         });
     }
 
