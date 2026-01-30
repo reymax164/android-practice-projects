@@ -48,4 +48,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, DataPassingActivity.class);
         startActivity(intent);
     }
+
+    public void goToNotification(View v) {
+        Intent intent = new Intent(this, BasicNotificationActivity.class);
+        startActivity(intent);
+    }
 }

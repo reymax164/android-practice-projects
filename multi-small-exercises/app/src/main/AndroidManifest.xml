@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MSEApp">
         <activity
+            android:name=".BasicNotificationActivity"
+            android:exported="false" />
+        <activity
             android:name=".DataReceivingActivity"
             android:exported="false" />
         <activity
@@ -46,5 +49,7 @@
             android:label="Payroll Calculator"
             android:parentActivityName=".MainActivity" />
     </application>
+
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
 
 </manifest>
