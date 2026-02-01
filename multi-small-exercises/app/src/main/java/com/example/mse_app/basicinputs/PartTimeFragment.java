@@ -1,4 +1,4 @@
-package com.example.mse_app;
+package com.example.mse_app.basicinputs;
 
 import android.os.Bundle;
 
@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.mse_app.R;
 
 public class PartTimeFragment extends Fragment {
 

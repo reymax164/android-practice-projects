@@ -10,6 +10,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.example.mse_app.basicinputs.DataPassingActivity;
+import com.example.mse_app.basicinputs.PayrollActivity;
+import com.example.mse_app.basicinputs.UserInputActivity;
+import com.example.mse_app.notifications.BasicNotificationActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -51,6 +56,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToNotification(View v) {
         Intent intent = new Intent(this, BasicNotificationActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToFruitsList(View v) {
+        Intent intent = new Intent(this, RecyclerBasic.class);
         startActivity(intent);
     }
 }

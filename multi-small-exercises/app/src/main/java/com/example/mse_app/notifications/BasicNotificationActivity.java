@@ -1,4 +1,4 @@
-package com.example.mse_app;
+package com.example.mse_app.notifications;
 
 import android.Manifest;
 import android.app.NotificationChannel;
@@ -19,6 +19,8 @@ import androidx.core.app.NotificationManagerCompat;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.mse_app.R;
 
 public class BasicNotificationActivity extends AppCompatActivity {
     Button notifyBtn;

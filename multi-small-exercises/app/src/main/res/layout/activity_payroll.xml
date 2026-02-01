@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@color/prussianBlue"
     android:orientation="vertical"
-    tools:context=".PayrollActivity"
+    tools:context=".basicinputs.PayrollActivity"
     android:padding="32dp">
 
     <TextView
@@ -35,7 +35,7 @@
 
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/payrollFragmentContainer"
-            android:name="com.example.mse_app.FullTimeFragment"
+            android:name="com.example.mse_app.basicinputs.FullTimeFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/prussianBlue"

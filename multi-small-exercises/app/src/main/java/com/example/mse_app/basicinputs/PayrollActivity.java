@@ -1,4 +1,4 @@
-package com.example.mse_app;
+package com.example.mse_app.basicinputs;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -9,7 +9,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.fragment.app.FragmentManager;
+
+import com.example.mse_app.R;
 
 public class PayrollActivity extends AppCompatActivity {
 

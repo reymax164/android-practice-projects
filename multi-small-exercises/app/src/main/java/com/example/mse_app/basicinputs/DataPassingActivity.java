@@ -1,4 +1,4 @@
-package com.example.mse_app;
+package com.example.mse_app.basicinputs;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.mse_app.R;
 
 public class DataPassingActivity extends AppCompatActivity {
     EditText etName, etAge;

@@ -14,16 +14,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MSEApp">
         <activity
-            android:name=".NotificationDetailsActivity"
+            android:name=".RecyclerBasic"
             android:exported="false" />
         <activity
-            android:name=".BasicNotificationActivity"
+            android:name=".notifications.NotificationDetailsActivity"
             android:exported="false" />
         <activity
-            android:name=".DataReceivingActivity"
+            android:name=".notifications.BasicNotificationActivity"
             android:exported="false" />
         <activity
-            android:name=".DataPassingActivity"
+            android:name=".basicinputs.DataReceivingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".basicinputs.DataPassingActivity"
             android:exported="false" />
         <activity
             android:name=".SimpleMusicPlayer"
@@ -44,12 +47,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".UserInputActivity"
+            android:name=".basicinputs.UserInputActivity"
             android:exported="false"
             android:label="User Input Exercise"
             android:parentActivityName=".MainActivity" />
         <activity
-            android:name=".PayrollActivity"
+            android:name=".basicinputs.PayrollActivity"
             android:exported="false"
             android:label="Payroll Calculator"
             android:parentActivityName=".MainActivity" />
