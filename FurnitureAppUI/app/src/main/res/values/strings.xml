@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Furniture App UI</string>
+    <string name="hot_deal_save">10% off\nSave up to ₱10,000!</string>
+    <string name="hot_deals">Hot Deals</string>
+    <string name="ic_home">Home</string>
+    <string name="ic_cart">Cart</string>
+    <string name="ic_account">Account</string>
+    <string name="ic_notification">Notification</string>
+    <string name="location_placeholder">somewhere</string>
+    <string name="sold_placeholder">0 Sold</string>
+    <string name="price_placeholder">₱0</string>
+    <string name="name">Some Bed 1</string>
+    <string name="cabinets">Cabinets</string>
+    <string name="chairs">Chairs</string>
+    <string name="tables">Tables</string>
+    <string name="sofas">Sofas</string>
+    <string name="beds">Beds</string>
+    <string name="search">Search</string>
+</resources>
